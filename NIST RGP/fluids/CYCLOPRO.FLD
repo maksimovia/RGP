@@ -1,0 +1,105 @@
+cyclopropane       !short name
+75-19-4            !CAS number
+cyclopropane       !full name
+cyclo-C3H6         !chemical formula {C3H6}
+trimethylene       !synonym
+42.081             !molecular weight [g/mol]
+145.7              !triple point temperature [K]; Reid, Prausnitz, & Poling, McGraw-Hill (1987)
+241.67             !normal boiling point [K]
+398.3              !critical temperature [K]
+5579.7             !critical pressure [kPa]
+6.1429             !critical density [mol/L]
+0.1305             !acentric factor
+0.0                !dipole moment [Debye]
+IIR                !default reference state
+8.0                !version number
+1027               !UN Number
+naphthene          !family
+
+! compiled by E.W. Lemmon, NIST Physical and Chemical Properties Division, Boulder, Colorado
+! 11-13-98 EWL, original version
+! 10-14-99 EWL, add L-J parameters
+! 10-27-99 EWL, change reference state to IIR since Tlow=273 (greater than Tnbp)
+! 11-08-01 EWL, change Dmax
+! 04-22-04 AHH, change dipole moment
+! 10-14-04 MLH, add family
+
+
+#EOS               !equation of state specification
+FEQ  Helmholtz equation of state for cyclopropane of Polt et al. (1992).
+?LITERATURE REFERENCE \
+?Polt, A., Platzer, B., and Maurer, G.,
+? "Parameter der thermischen Zustandsgleichung von Bender fuer 14
+? mehratomige reine Stoffe,"
+? Chem. Tech. (Leipzig), 44(6):216-224, 1992.
+?\
+?Estimated uncertainties are 1% in density, 2% in vapor pressure, and 5% in
+?heat capacities.
+?\
+!end of info section
+273.0              !lower temperature limit [K]
+473.0              !upper temperature limit [K]
+28000.0            !upper pressure limit [kPa]
+15.595             !maximum density [mol/L]
+CPP                                    !pointer to Cp0 model
+42.081                                 !molecular weight [g/mol]
+145.7                                  !triple point temperature [K]
+-1                                     !pressure at triple point [kPa]
+-1                                     !density at triple point [mol/L]
+241.670                                !normal boiling point temperature [K]
+0.1305                                 !acentric factor
+398.3        5579.7       6.1429149    !Tc [K], pc [kPa], rhoc [mol/L]
+398.3                     6.1429149    !reducing parameters [K, mol/L]
+8.3143                                 !gas constant [J/mol-K]
+      22  4      0  0       0  0       !# terms, # coeff/term for:  "normal" terms, critical, spare
+-0.137016097588E+01  3.0     0.0     0 !a(i),t(i),d(i),l(i)
+ 0.212444673002E+01  4.0     0.0     0
+-0.578908942724E+00  5.0     0.0     0
+-0.115633726379E+01  0.0     1.0     0
+ 0.252574014413E+01  1.0     1.0     0
+-0.282265442929E+01  2.0     1.0     0
+ 0.283576113255E+00  3.0     1.0     0
+-0.842718450726E-01  4.0     1.0     0
+ 0.931086305879E+00  0.0     2.0     0
+-0.105296584292E+01  1.0     2.0     0
+ 0.432020532920E+00  2.0     2.0     0
+-0.251108254803E+00  0.0     3.0     0
+ 0.127725582443E+00  1.0     3.0     0
+ 0.483621161849E-01  0.0     4.0     0
+-0.116473795607E-01  1.0     4.0     0
+ 0.334005754773E-03  1.0     5.0     0
+ 0.137016097588E+01  3.0     0.0     2
+-0.212444673002E+01  4.0     0.0     2
+ 0.578908942724E+00  5.0     0.0     2
+ 0.304945770499E+00  3.0     2.0     2
+-0.184276165165E+00  4.0     2.0     2
+-0.292111460397E+00  5.0     2.0     2
+
+
+#AUX               !auxiliary model specification
+CPP  ideal gas heat capacity function
+?LITERATURE REFERENCE \
+?Polt, A., Platzer, B., and Maurer, G.,
+? "Parameter der thermischen Zustandsgleichung von Bender fuer 14
+? mehratomige reine Stoffe,"
+? Chem. Tech. (Leipzig), 44(6):216-224, 1992.
+?\
+!end of info section
+273.0              !lower temperature limit [K]
+473.0              !upper temperature limit [K]
+0.0                !upper pressure limit [kPa]
+0.0                !maximum density [mol/L]
+1.0          42.081                    !reducing parameters for T, Cp0
+  5  0    0  0    0  0  0              !Nterms:  polynomial, exponential, cosh, sinh
+ 0.12601600d+01    0.00
+-0.90530700d-02    1.00
+ 0.50550400d-04    2.00
+-0.77223700d-07    3.00
+ 0.40538000d-10    4.00
+
+
+@END
+c        1         2         3         4         5         6         7         8
+c2345678901234567890123456789012345678901234567890123456789012345678901234567890
+0.4807             !Lennard-Jones coefficient sigma [nm] for ECS method
+248.9              !Lennard-Jones coefficient epsilon/kappa [K] for ECS method

@@ -1,0 +1,21 @@
+#  NIST-RGP.F iNPUT:
+#
+#  IFLD=1 -> PH2  
+#  IFLD=2 -> LOX
+#  IFLD=3 -> PROPANE (C3H8)
+#  IFLD=4 -> CO2
+#  IFLD=5 -> METHANE (CH4)
+#  IFLD=6 -> ETHANE (C2H6)
+#  IFLD=7 -> NITROGEN
+#  IFLD=8 -> BUTANE (C4H10)
+#  IFLD=9 -> R245FA 
+#
+#   NT    NP    NSAT  IFLD
+# ______ _____ _____ _____
+    2  2   2    7
+#
+#
+#    TMIN    TMAX       PMIN       PMAX
+#   [DEG R] [DEG R]    [PSIA]     [PSIA]
+#   _______ _______   _________   ___________
+    527.     2120.       580.         1160.

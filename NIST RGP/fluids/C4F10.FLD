@@ -1,0 +1,103 @@
+perfluorobutane    !short name
+355-25-9           !CAS number
+decafluorobutane   !full name
+C4F10              !chemical formula
+perfluorobutane    !synonym
+238.03             !molecular weight [g/mol]
+145.0              !triple point temperature [K]; Reid, Prausnitz, & Poling, McGraw-Hill (1987)
+271.061            !normal boiling point [K]
+386.326            !critical temperature [K]
+2323.4             !critical pressure [kPa]
+2.52               !critical density [mol/L]
+0.374              !acentric factor
+-1.                !dipole moment [Debye]
+NBP                !default reference state
+8.0                !version number
+halocb             !family
+
+! compiled by E.W. Lemmon, NIST Physical and Chemical Properties Division, Boulder, Colorado
+!  5-07-98 EWL, original version
+! 11-02-99 EWL, reduce sigma0 by factor of 1000.
+
+
+#EOS               !equation of state specification
+ECS  Thermodynamic Extended Corresponding States model w/ T- and rho-dependent shape factors.
+?LITERATURE REFERENCE \
+?Huber, M.L. and Ely, J.F.,
+? "A predictive extended corresponding states model for pure and mixed
+? refrigerants including an equation of state for R134a,"
+? Int. J. Refrigeration, 17:18-31, 1994.\
+?\
+?ECS parameters fitted by E.W. Lemmon, NIST, 05-07-98\
+?Average absolute deviations of the fit from the experimental data were:\
+?   PVT(vapor): 0.64%;  Pv: 0.48%;  Dsat(liq.): 0.43%
+?\
+?DATA SOURCES\
+?Brown, J.A. and Mears, W.H. Physical Properties of n-Perfluorobutane.
+? J. Phys. Chem., 62:960-62 (1958).\
+?\
+!end of info section
+189.0              !lower temperature limit [K]
+500.0              !upper temperature limit [K]
+30000.0            !upper pressure limit [kPa]
+7.64               !maximum density [mol/L]
+CPP                !pointer to Cp0 model
+r113.fld
+FEQ                !pointer to reference fluid model
+0.25253            !acentric factor for R113 used in shape factor correlation
+0.280191           !critical compressibility for R113 used in correlation
+0.374              !acentric factor for fluid used in shape factor correlation
+386.326            !critical temperature [K]
+2323.4             !critical pressure [kPa]
+2.52               !critical density [mol/L]
+2                         !number of temperature coefficients for 'f' shape factor
+  0.776042865d-02  0      !alpha1 of Huber & Ely
+ -0.641975631d+00  1      !alpha2 of Huber & Ely (log(Tr) term)
+0                         !number of density coefficients for 'f' shape factor
+2                         !number of temperature coefficients for 'h' shape factor
+  0.278313281d-02  0      !beta1 of Huber & Ely
+ -0.593657910d+00  1      !beta2 of Huber & Ely (log(Tr) term)
+1                         !number of density coefficients for 'h' shape factor
+ -0.236093735d-02  1
+
+
+#AUX               !auxiliary model specification
+CPP  ideal gas heat capacity function
+?LITERATURE REFERENCE \
+?Estimated from group contribution methods and equations for R14, R116, and
+?  R218.
+?\
+!end of info section
+100.0              !lower temperature limit [K]
+600.0              !upper temperature limit [K]
+0.0                !upper pressure limit [kPa]
+0.0                !maximum density [mol/L]
+1.0          8.31451                   !reducing parameters for T, Cp0
+  4  0    0  0    0  0  0              !Nterms:  polynomial, exponential, cosh, sinh
+ 0.20150709d+01    0.00
+ 0.96863193d-01    1.00
+-0.99797537d-04    2.00
+ 0.37348060d-07    3.00
+
+
+#STN        !surface tension specification
+ST1  surface tension model of McLure et al. (1982).
+?LITERATURE REFERENCE \
+?McLure, I.A., Soares, V.A.M., and Edmonds, B.,
+? "Surface tension of perfluoropropane, perfluoro-n-butane, perfluoro-n-hexane,
+? perfluoro-octane, perfluorotributylamine and n-pentane,"
+? J. Chem. Soc., Faraday Trans. 1, 78(7):2251-7, 1982.\
+?\
+!end of info section
+189.0              !lower temperature limit [K]
+386.326            !upper temperature limit [K]
+0.0                !(dummy) upper pressure limit
+0.0                !(dummy) maximum density
+1                           !number of terms in surface tension model
+386.326                     !critical temperature used in fit (dummy)
+ 0.04297     1.21           !sigma0 and n
+
+
+@END
+c        1         2         3         4         5         6         7         8
+c2345678901234567890123456789012345678901234567890123456789012345678901234567890
