@@ -14,16 +14,16 @@ def triple(fluid):
     return {'T':T,'P':P}
 
 def R(fluid):
-    R = PropsSI('GAS_CONSTANT', fluid)
+    R = PropsSI('GAS_CONSTANT', fluid)/PropsSI('M', fluid)
     return R
 
 def t_p(T,P,fluid):
     H = PropsSI('H','T', T, 'P', P, fluid)
     A = PropsSI('A','T', T, 'P', P, fluid)
     v = 1/PropsSI('D','T', T, 'P', P, fluid)
-    cv = PropsSI('CVMOLAR','T', T, 'P', P, fluid)
-    cp = PropsSI('CPMOLAR','T', T, 'P', P, fluid)
-    dPdv = PropsSI('d(P)/d(1/D)|T','T', T, 'P', P, fluid)
+    cv = PropsSI('CVMOLAR','T', T, 'P', P, fluid)/PropsSI('M', fluid)
+    cp = PropsSI('CPMOLAR','T', T, 'P', P, fluid)/PropsSI('M', fluid)
+    dPdv = -PropsSI('D','T', T, 'P', P, fluid)**2 * PropsSI('d(P)/d(D)|T','T', T, 'P', P, fluid)
     s = PropsSI('S','T', T, 'P', P, fluid)
     mu = PropsSI('V','T', T, 'P', P, fluid)
     lamda = PropsSI('L','T', T, 'P', P, fluid)
@@ -35,9 +35,9 @@ def p_q(P,Q,fluid):
     A = PropsSI('A', 'P', P,'Q', Q, fluid)
     v = 1/PropsSI('D','P', P,'Q', Q, fluid)
     
-    cv = PropsSI('CVMOLAR','P', P,'Q', Q, fluid)
-    cp = PropsSI('CPMOLAR','P', P,'Q', Q, fluid)
-    dPdv = 1
+    cv = PropsSI('CVMOLAR','P', P,'Q', Q, fluid)/PropsSI('M', fluid)
+    cp = PropsSI('CPMOLAR','P', P,'Q', Q, fluid)/PropsSI('M', fluid)
+    dPdv = -PropsSI('D','P', P,'Q', Q, fluid)**2 * PropsSI('d(P)/d(D)|T','P', P,'Q', Q, fluid)
     s = PropsSI('S','P', P,'Q', Q, fluid)
     mu = PropsSI('V','P', P,'Q', Q, fluid)
     lamda = PropsSI('L','P', P,'Q', Q, fluid)
