@@ -41,7 +41,7 @@ def t_p(T,P,fluid):
     Cp = res.Output[6]
     dPdV = -res.Output[7] / res.Output[4]**2
     S = res.Output[8]
-    mu = res.Output[9]*res.Output[4]
+    mu = res.Output[9]
     lamda = res.Output[10]
     return {'T':T, 'P':P, 'H':H, 'W':W, 'V':V, 'Cv':Cv,'Cp':Cp,'dPdV':dPdV,'S':S,'mu':mu,'lamda':lamda}
 
@@ -58,6 +58,6 @@ def p_q(P,Q,fluid):
     Cp = res.Output[6]
     dPdV = -res.Output[7] / res.Output[4]**2
     S = res.Output[8]
-    mu = res.Output[9]*res.Output[4]
+    mu = res.Output[9]
     lamda = res.Output[10]
     return {'T':T, 'P':P, 'H':H, 'W':W, 'V':V, 'Cv':Cv,'Cp':Cp,'dPdV':dPdV,'S':S,'mu':mu,'lamda':lamda}
